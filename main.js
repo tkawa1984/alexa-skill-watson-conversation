@@ -268,11 +268,11 @@ function main(args) {
 
     verifyFromAlexa(args, rawBody)
       .then(() => initClients(args))
-      .then(() => getSessionContext(sessionId))
+      // .then(() => getSessionContext(sessionId))
       .then(() => conversationMessage(request, args.WORKSPACE_ID))
       .then(watsonResponse => actionHandler(args, watsonResponse))
       .then(actionResponse => sendResponse(actionResponse, resolve))
-      .then(() => saveSessionContext(sessionId))
+      // .then(() => saveSessionContext(sessionId))
       .catch(err => {
         console.error('Caught error: ');
         console.log(err);
